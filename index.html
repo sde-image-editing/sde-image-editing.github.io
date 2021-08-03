@@ -1,0 +1,202 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <title>SDEdit Project Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta property="og:image" content="images/teaser.jpg"/>
+<meta property="og:title" content="SDEdit: Image Synthesis and Editing with Stochastic Differential Equations" />
+
+<script src="lib.js" type="text/javascript"></script>
+<script src="popup.js" type="text/javascript"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53682931-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">
+// redefining default features
+var _POPUP_FEATURES = 'width=500,height=300,resizable=1,scrollbars=1,titlebar=1,status=1';
+</script>
+<link media="all" href="glab.css" type="text/css" rel="StyleSheet">
+<style type="text/css" media="all">
+IMG {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	FLOAT: right;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 0px
+}
+#primarycontent {
+	MARGIN-LEFT: auto; ; WIDTH: expression(document.body.clientWidth >
+800? "800px": "auto" ); MARGIN-RIGHT: auto; TEXT-ALIGN: left; max-width:
+800px }
+BODY {
+	TEXT-ALIGN: center
+}
+</style>
+
+<meta content="MSHTML 6.00.2800.1400" name="GENERATOR"><script src="b5m.js" id="b5mmain" type="text/javascript"></script></head>
+
+<body>
+
+<div id="primarycontent">
+<center><h1>SDEdit: Image Synthesis and Editing with Stochastic Differential Equations</h1></center>
+
+
+<center><h2>
+  <a href="https://cs.stanford.edu/~chenlin/">Chenlin Meng</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://yang-song.github.io/">Yang Song</a>&nbsp;&nbsp;&nbsp;
+  <a href="http://tsong.me/">Jiaming Song</a>&nbsp;&nbsp;&nbsp;
+  <br>
+  <a href="https://jiajunwu.com/">Jiajun Wu</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan Zhu</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://cs.stanford.edu/~ermon/">Stefano Ermon</a>&nbsp;&nbsp;&nbsp;
+
+</h2>
+</center>
+<center><h2>
+  Stanford University &nbsp;&nbsp;&nbsp;
+  Carnegie Mellon University 
+</h2></center>
+
+
+<center>
+  <h2><strong><a href="https://arxiv.org/abs/2108.01073">Paper</a> | <a href="https://github.com/ermongroup/SDEdit">GitHub</a> | <a href="https://colab.research.google.com/drive/1KkLS53PndXKQpPlS1iK-k1nRQYmlb4aO?usp=sharing">Colab</a></strong> </h2></center>
+
+
+<br>
+<div style="font-size:14px"><p align="justify">
+SDEdit is an image synthesis and editing framework based on stochastic differential equations (SDEs). SDEdit allows stroke-based image synthesis, stroke-based image editing and image compositing without task specific optimization.
+</p></div>
+
+<center style="margin-top:1cm;">
+  <a href="images/teaser.jpg">
+  <img src="images/teaser.jpg" width="800">
+  </a>
+</center>
+<p></p>
+
+<br><br>
+<p style="margin-top:10cm;">
+<h2>Abstract</h2>
+
+<div style="font-size:14px"><p align="justify">
+  We introduce a new image editing and synthesis frame-work, Stochastic Differential Editing (SDEdit), based on arecent generative model using stochastic differential equa-tions (SDEs).  Given an input image with user edits (e.g.,hand-drawn color strokes), we first add noise to the inputaccording to an SDE, and subsequently denoise it by simu-lating the reverse SDE to gradually increase its likelihoodunder the prior.  Our method does not require task-specificloss function designs, which are critical components for re-cent image editing methods based on GAN inversion. Com-pared to conditional GANs, we do not need to collect newdatasets of original and edited images for new applications.Therefore,  our  method  can  quickly  adapt  to  various  edit-ing tasks at test time without re-training models.  Our ap-proach achieves strong performance on a wide range of ap-plications, including image synthesis and editing guided bystroke paintings and image compositing.
+</p></div>
+
+<a href="https://arxiv.org/abs/2108.01073">
+  <img style="float: left; padding: 10px; PADDING-RIGHT: 30px;" alt="paper thumbnail" src="images/paper_thumbnail.jpg" width=170>
+</a>
+<br>
+
+
+
+<h2>Paper</h2>
+<p><a href="https://arxiv.org/abs/2108.01073">arXiv 2108.01073</a>,  2021. </p>
+
+
+
+<h2>Citation</h2>
+<p>Chenlin Meng, Yang Song, Jiaming Song, Jiajun Wu, Jun-Yan Zhu and Stefano Ermon. "Image Synthesis and Editing with Stochastic Differential Equations", in arXiv, 2021.
+<br>
+<a href="sdedit_bibtek.txt">Bibtex</a>
+
+</p>
+<br><br><br>
+
+
+
+<h2 align='center'>Introducing SDEdit: a powerful image synthesis and editing technique</h2>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td  align="center" valign="middle">
+    <p font-size:14px>
+    The key intuition of SDEdit is to "hijack" the reverse stochastic process of SDE-based generative models, as illustrated in the figure below. Given an input image for editing, such as a stroke painting or an image with strokes, we can add a suitable amount of noise to make its artifacts undetectable, while still preserving the overall structure of the image. We then initialize the reverse SDE with this noisy input, and simulate the reverse process to obtain a denoised image of high quality. Because the denoised image and the input resembles each other with noise perturbations, they also share the overall image structure. </p></td>
+    <tr>
+        <td align="center" valign="middle"><a href="images/sde_stroke_generation.jpg"><img src="images/sde_stroke_generation.jpg"  width=800> </a></td>
+    </tr>
+  </tr>
+
+</table>
+<p>&nbsp;</p>
+
+<h2 align='center'>Synthesizing images from strokes with SDEdit</h2>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td  align="center" valign="middle">
+    <p font-size:14px>
+    Given an input stroke painting, our goal is to generate a realistic image that shares the same structure as the input when no paired data is available. We present stroke-based image synthesis with SDEdit on LSUN bedroom, LSUN church and CelebA-HQ datasets. We notice that SDEdit can generate multiple diverse images for each stroke painting. </p></td>
+    <tr>
+        <td align="center" valign="middle"><a href="images/stroke_based_generation.jpg"><img src="images/stroke_based_generation.jpg"  width=800> </a></td>
+    </tr>
+  </tr>
+
+</table>
+<p>&nbsp;</p>
+
+
+<h2 align='center'>Scribble-based image editing with SDEdit</h2>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td  align="center" valign="middle">
+    <p font-size:14px>
+      Given an input with user added strokes, we want to generate a realistic image based on the user's edit. We observe that our method can generate image edits that are both realistic and faithful (to the user edit), while avoid making undesired modifications. (See the figure below.) </p></td>
+    <tr>
+        <td align="center" valign="middle"><a href="images/stroke_edit.jpg"><img src="images/stroke_edit.jpg"  width=800> </a></td>
+    </tr>
+  </tr>
+
+</table>
+<p>&nbsp;</p>
+
+<h2 align='center'>Image compositing with SDEdit</h2>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td  align="center" valign="middle">
+    <p font-size:14px>
+      Given an image, users can specify how they want the edited image to look like using pixel patches copied from other reference images. Our goal is to generate a realistic image based on the user's edit. In the figure below, "original" stands for the orignal image, and "input" stands for an input designed by users. We observe that SDEdit can generate both faithful and realistic images with much lower LPIPS scores compared to GAN baselines. </p></td>
+    <tr>
+        <td align="center" valign="middle"><a href="images/celeba_edit.jpg"><img src="images/celeba_edit.jpg"  width=800> </a></td>
+    </tr>
+  </tr>
+
+</table>
+<p>&nbsp;</p>
+
+<br><br>
+<h2>Related Work</h2>
+
+<ul id='relatedwork'>
+  <li font-size: 15px>
+ Song, Yang,  Jascha Sohl-Dickstein, Diederik P. Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole <a href="https://arxiv.org/abs/2011.13456"><strong>"Score-Based Generative Modeling through Stochastic Differential Equations"</strong></a>, Proceedings of the 9th International Conference on Learning Representations, 2021.
+</li>
+<li font-size: 15px>
+ Song, Jiaming, Chenlin Meng, and Stefano Ermon <a href="https://arxiv.org/abs/2010.02502"><strong>"Denoising Diffusion Implicit Models"</strong></a>, Proceedings of the 9th International Conference on Learning Representations, 2021.
+</li>
+<li font-size: 15px> Song, Yang, and Stefano Ermon <a href="https://arxiv.org/abs/1907.05600"><strong>"Generative Modeling by Estimating Gradients of the Data Distribution"</strong></a>,
+Proceedings of the 33rd Annual Conference on Neural Information Processing Systems, 2019.
+</li>
+<li font-size: 15px> Song, Yang, and Stefano Ermon <a href="https://arxiv.org/abs/2006.09011"><strong>"Improved Techniques for Training Score-Based Generative Models"</strong></a>, 
+Proceedings of the 34th Annual Conference on Neural Information Processing Systems, 2020.
+</li>
+<li font-size: 15px>
+ Ho, Jonathan, Ajay Jain, and Pieter Abbeel <a href="https://arxiv.org/abs/2006.11239"><strong>"Denoising Diffusion Probabilistic Models"</strong></a>, Proceedings of the 34th Annual Conference on Neural Information Processing Systems, 2020.
+</li>
+</ul>
+
+<br><br><br>
+
+
+</div>
+</body></html>
