@@ -1,8 +1,7 @@
-@misc{meng2021sdedit,
-    title={SDEdit: Image Synthesis and Editing with Stochastic Differential Equations},
-    author={Chenlin Meng and Yang Song and Jiaming Song and Jiajun Wu and Jun-Yan Zhu and Stefano Ermon},
-    year={2021},
-    eprint={2108.01073},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+@inproceedings{
+      meng2022sdedit,
+      title={{SDE}dit: Guided Image Synthesis and Editing with Stochastic Differential Equations},
+      author={Chenlin Meng and Yutong He and Yang Song and Jiaming Song and Jiajun Wu and Jun-Yan Zhu and Stefano Ermon},
+      booktitle={International Conference on Learning Representations},
+      year={2022},
 }
